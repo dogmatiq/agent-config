@@ -1,6 +1,6 @@
 name: agent-config
 version: 0.1.0
-description: AI agent skills and configuration for Dogmatiq projects
+description: AI agent skills for projects that use Dogma
 license: MIT
 repository: https://github.com/dogmatiq/agent-config
 includes: auto
