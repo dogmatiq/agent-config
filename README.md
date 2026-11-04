@@ -45,9 +45,9 @@ The first `apm install` resolves `^1` to the newest 1.x release. Run
 
 Add `apm_modules/` and `apm.lock.yaml` to the repository's `.gitignore`. Don't
 commit the lockfile: it records the files deployed for the target that generated
-it, so it differs between developers. Deployed skills, such as `.claude/skills/`,
-depend on each developer's target, so they belong in each developer's global
-gitignore instead.
+it, so it differs between developers. Deployed skills, such as
+`.claude/skills/`, depend on each developer's target, so they belong in each
+developer's global gitignore instead.
 
 Don't commit deployed skills. A repository that provides its own skills keeps
 them under `.apm/`, as described in [Layout], and `apm install` deploys them
