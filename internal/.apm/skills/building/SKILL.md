@@ -22,6 +22,15 @@ format code. Always use `make`. Never run `go test`, `go build`, `go vet`,
 | Run the checks CI runs        | `make ci`        |
 | Lint                          | `make lint`      |
 
+To run only some Go tests, pass `-run` in `GO_TEST_ARGS`:
+
+```sh
+make test GO_TEST_ARGS='-run TestParseID/empty_input'
+```
+
+This replaces the project's default test flags, such as `-race`. That's fine for
+a focused run, so don't add them back.
+
 Run `make precommit` before every commit. It can rewrite files, for example by
 formatting them. Include its changes to the files you changed.
 
