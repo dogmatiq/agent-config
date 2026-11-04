@@ -10,9 +10,9 @@ argument-hint: "optional version without a prefix, e.g. '1.6.0'"
 # Releasing
 
 A release turns the `[Unreleased]` section of `CHANGELOG.md` into a dated
-version section, commits it, and creates an annotated tag for it. The
-`make tag` target from the `changelog/v2` package of the [makefiles.dev]
-makefiles does all of this, and is the preferred way to release.
+version section, commits it, and creates an annotated tag for it. The `make tag`
+target from the `changelog/v2` package of the [makefiles.dev] makefiles does all
+of this, and is the preferred way to release.
 
 ## 1. Check the preconditions
 
@@ -74,8 +74,8 @@ what `make tag` would:
    today's date. Leave the entries as they are, and don't add a new
    `[Unreleased]` heading.
 2. Add `[1.6.0]: <prefix>v1.6.0` to the link block after the last
-   `<!-- references -->` comment, keeping the version links in ascending
-   order. Copy `<prefix>` from the existing version links, such as
+   `<!-- references -->` comment, keeping the version links in ascending order.
+   Copy `<prefix>` from the existing version links, such as
    `https://github.com/dogmatiq/ferrite/releases/tag/`. Leave the
    `[unreleased]:` link alone.
 3. Commit only `CHANGELOG.md`, with the message `Bump version to 1.6.0`.

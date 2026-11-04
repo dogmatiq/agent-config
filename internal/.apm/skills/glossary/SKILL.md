@@ -1,15 +1,20 @@
 ---
 name: glossary
-description: "Add, update, or review glossary terms in a Dogmatiq project. Use when an ADR introduces new terms, a term definition needs revision, a new term needs to be cross-referenced, or the glossary index needs updating. Triggers: add glossary term, update glossary, glossary entry, define term, glossary."
-argument-hint: "the term(s) to add or update, e.g., 'optimistic conflict resolution'"
+description:
+  "Add, update, or review glossary terms in a Dogmatiq project. Use when an ADR
+  introduces new terms, a term definition needs revision, a new term needs to be
+  cross-referenced, or the glossary index needs updating. Triggers: add glossary
+  term, update glossary, glossary entry, define term, glossary."
+argument-hint:
+  "the term(s) to add or update, e.g., 'optimistic conflict resolution'"
 ---
 
 # Maintain Glossary
 
 Guides adding, updating, and reviewing glossary entries in Dogmatiq projects.
 Each project keeps a `docs/glossary.md` that defines terms specific to that
-project. Terms already defined in the [Dogma glossary] are not redefined —
-they are cross-referenced only.
+project. Terms already defined in the [Dogma glossary] are not redefined — they are
+cross-referenced only.
 
 ## When to Use
 
@@ -28,14 +33,14 @@ docs/glossary.md       # Project-level glossary
 
 The file has three structural parts:
 
-1. **Intro paragraph** — one sentence linking to the parent (Dogma) glossary
-   and explaining what this file covers.
-2. **Alphabetical index** — all 26 letters, one per line, separated by
-   `•`. Letters with at least one entry are markdown links to their section
-   anchor (`[R](#r)`). Letters with no entries are plain text.
+1. **Intro paragraph** — one sentence linking to the parent (Dogma) glossary and
+   explaining what this file covers.
+2. **Alphabetical index** — all 26 letters, one per line, separated by `•`.
+   Letters with at least one entry are markdown links to their section anchor
+   (`[R](#r)`). Letters with no entries are plain text.
 3. **Letter sections** — `## A`, `## B`, etc. Each term is a `### Term name`
-   heading followed by its definition. Only include letter sections that have
-   at least one entry.
+   heading followed by its definition. Only include letter sections that have at
+   least one entry.
 4. **Reference link blocks** at the bottom, inside HTML comment delimiters:
    - `<!-- anchors -->` — intra-glossary cross-reference anchors
    - `<!-- ADRs -->` — links to ADR files
@@ -44,9 +49,9 @@ The file has three structural parts:
 
 ### 1. Check the upstream glossary
 
-Before writing a definition, confirm the term is not already defined in
-the [Dogma glossary]. If it is, do not redefine it. If project prose
-needs to reference it, link directly to the upstream glossary entry.
+Before writing a definition, confirm the term is not already defined in the
+[Dogma glossary]. If it is, do not redefine it. If project prose needs to reference
+it, link directly to the upstream glossary entry.
 
 ### 2. Identify the source
 
@@ -69,8 +74,7 @@ Follow these rules:
   when genuinely necessary.
 - **Define the term itself, not how it is used.** The first sentence should
   complete "X is ..." or "An X is ...".
-- **Follow the [style guide]** for line wrapping, character, and reference link
-  conventions.
+- **Follow the [style guide]** for line wrapping, character, and reference link conventions.
 - **Cross-reference related terms** inline in the definition prose where it
   reads naturally. If a related term is not mentioned in the prose, add a
   trailing `See [term].` line. Do not use `See also`.
@@ -84,10 +88,10 @@ If the letter was previously plain text in the index, change it to a link:
 ### 6. Add reference links at the bottom
 
 Add any new intra-glossary anchors to the `<!-- anchors -->` block and any new
-ADR links to the `<!-- ADRs -->` block. Keep each block sorted alphabetically
-by the link label. When a term is used in its plural form in prose, add a
-separate plural reference link so that `[term-names]` reads naturally in source.
-Use the form:
+ADR links to the `<!-- ADRs -->` block. Keep each block sorted alphabetically by
+the link label. When a term is used in its plural form in prose, add a separate
+plural reference link so that `[term-names]` reads naturally in source. Use the
+form:
 
 ```markdown
 <!-- anchors -->
@@ -103,22 +107,21 @@ Use the form:
 ## Updating an Existing Term
 
 - Edit the definition prose in place; do not change the heading or anchor.
-- If a term has been superseded or renamed, add a `See [replacement].` line
-  and leave the original heading so existing links do not break.
-- If the term was introduced by an ADR that has since been superseded,
-  update the `See [ADR-N].` reference and the link in the
-  `<!-- ADRs -->` block.
+- If a term has been superseded or renamed, add a `See [replacement].` line and
+  leave the original heading so existing links do not break.
+- If the term was introduced by an ADR that has since been superseded, update
+  the `See [ADR-N].` reference and the link in the `<!-- ADRs -->` block.
 
 ## Reviewing After ADR Acceptance
 
-When an ADR is accepted, scan the glossary for two categories of definition
-that may need updating:
+When an ADR is accepted, scan the glossary for two categories of definition that
+may need updating:
 
 - **Stale definitions** — entries that described the old design and no longer
   accurately reflect what the ADR has established.
 - **Missing entries** — terms introduced by the ADR that do not yet have
-  glossary entries. These should already be called out in the ADR's
-  Consequences section.
+  glossary entries. These should already be called out in the ADR's Consequences
+  section.
 
 Update any affected entries as part of the same change that accepts the ADR.
 
@@ -158,4 +161,4 @@ any additional conventions specific to this project.
 <!-- references -->
 
 [Dogma glossary]: https://github.com/dogmatiq/dogma/blob/main/docs/glossary.md
-[style guide]: ../prose/SKILL.md
+[style guide]: ../writing-prose/SKILL.md
