@@ -7,8 +7,9 @@ AI agent skills and configuration for Dogmatiq projects, packaged for [APM].
 </div>
 
 This repository is an [APM] package. It holds the skills that coding agents use
-when working on Dogmatiq projects, such as how to build and test a project, how
-to write an ADR, and the prose style for documentation.
+when working on Dogmatiq projects.
+
+There is no release yet. Skills are added one at a time as they are reviewed.
 
 ## Usage
 
@@ -51,11 +52,11 @@ dependencies:
   apm:
     - git: dogmatiq/agent-config
       ref: v0.1.0
-      skills: [prose, testing]
+      skills: [<name>, <name>]
 ```
 
-Several skills assume Dogmatiq conventions — for example, `build-and-test`
-expects every operation to go through `make`.
+Some skills assume Dogmatiq conventions, such as running every build and test
+operation through `make`.
 
 ## Layout
 
