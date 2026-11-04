@@ -18,14 +18,14 @@ Each package only deploys its own skills.
 
 ## Usage
 
-Add the packages that apply to the project to its `apm.yml` file, pinned to a
-release tag. Both packages share the repository's tags.
+Add the packages that apply to the project to its `apm.yml` file, with a caret
+constraint on the major version. Both packages share the repository's tags.
 
 ```yaml
 dependencies:
   apm:
-    - dogmatiq/agent-config#v0.1.0 # in a project that uses Dogma
-    - dogmatiq/agent-config/internal#v0.1.0 # in a Dogmatiq repository
+    - dogmatiq/agent-config#^1 # in a project that uses Dogma
+    - dogmatiq/agent-config/internal#^1 # in a Dogmatiq repository
 ```
 
 Which agents receive the skills is up to each developer, so the repository's
@@ -40,11 +40,14 @@ apm install
 Without a configured target, APM falls back to detecting agent-specific files
 such as `CLAUDE.md`, and fails with "No harness detected" if there are none.
 
+The first `apm install` resolves `^1` to the newest 1.x release. Run
+`apm update` to move to a newer one later.
+
 Add `apm_modules/` and `apm.lock.yaml` to the repository's `.gitignore`. Don't
 commit the lockfile: it records the files deployed for the target that generated
-it, so it differs between developers. The tag in `apm.yml` is the pin. Deployed
-skills, such as `.claude/skills/`, depend on each developer's target, so they
-belong in each developer's global gitignore instead.
+it, so it differs between developers. Deployed skills, such as `.claude/skills/`,
+depend on each developer's target, so they belong in each developer's global
+gitignore instead.
 
 Don't commit deployed skills. A repository that provides its own skills keeps
 them under `.apm/`, as described in [Layout], and `apm install` deploys them
@@ -57,7 +60,7 @@ name. Add `path: internal` to select from the `internal` package:
 dependencies:
   apm:
     - git: dogmatiq/agent-config
-      ref: v0.1.0
+      ref: ^1
       skills: [<name>, <name>]
 ```
 
