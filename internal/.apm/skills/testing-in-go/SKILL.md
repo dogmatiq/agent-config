@@ -27,7 +27,7 @@ description:
 - Use `github.com/google/go-cmp/cmp` only when a diff of two values is genuinely
   useful. Do not reach for it just to avoid writing a condition.
 - **`pgregory.net/rapid` is encouraged for property-based testing.** See
-  [references/rapid.md](./references/rapid.md).
+  [references/rapid.md].
 
 ### Dot imports
 
@@ -299,9 +299,15 @@ has suitable stubs in a `stubs` package — many Dogmatiq modules expose one for
 their own types.
 
 For the conventions on how to write stubs, see
-[references/stubs.md](./references/stubs.md).
+[references/stubs.md].
 
 ## Running Tests
 
 Use `make` — never invoke `go test` directly. See the
-[building skill](../building/SKILL.md) for available targets.
+[building skill] for available targets.
+
+<!-- references -->
+
+[building skill]: ../building/SKILL.md
+[references/rapid.md]: ./references/rapid.md
+[references/stubs.md]: ./references/stubs.md

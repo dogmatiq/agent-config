@@ -47,8 +47,8 @@ skills, such as `.claude/skills/`, depend on each developer's target, so they
 belong in each developer's global gitignore instead.
 
 Don't commit deployed skills. A repository that provides its own skills keeps
-them under `.apm/`, as described in [Layout](#layout), and `apm install` deploys
-them alongside its dependencies.
+them under `.apm/`, as described in [Layout], and `apm install` deploys them
+alongside its dependencies.
 
 Projects can also install a subset of a package's skills by listing them by
 name. Add `path: internal` to select from the `internal` package:
@@ -68,6 +68,10 @@ and each skill for Dogmatiq repositories lives in
 `internal/.apm/skills/<name>/SKILL.md`. Other kinds of agent configuration, such
 as instructions or prompts, belong in sibling directories under the same `.apm/`
 directory.
+
+<!-- anchors -->
+
+[layout]: #layout
 
 <!-- references -->
 
