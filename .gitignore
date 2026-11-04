@@ -1,4 +1,4 @@
-# Output of running "apm install" in this repository.
-.claude/skills/
+# Output of running "apm install" in this repository. Deployed skills depend on
+# the developer's target, so they belong in their global gitignore.
 apm_modules/
 apm.lock.yaml

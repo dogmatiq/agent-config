@@ -33,6 +33,16 @@ apm install
 Without a configured target, APM falls back to detecting agent-specific files
 such as `CLAUDE.md`, and fails with "No harness detected" if there are none.
 
+Add `apm_modules/` and `apm.lock.yaml` to the repository's `.gitignore`. Don't
+commit the lockfile: it records the files deployed for the target that
+generated it, so it differs between developers. The tag in `apm.yml` is the
+pin. Deployed skills, such as `.claude/skills/`, depend on each developer's
+target, so they belong in each developer's global gitignore instead.
+
+Don't commit deployed skills. A repository that provides its own skills keeps
+them under `.apm/`, as described in [Layout](#layout), and `apm install`
+deploys them alongside its dependencies.
+
 Projects outside the Dogmatiq organization can install a subset of the skills
 by listing them by name:
 
