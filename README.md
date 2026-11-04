@@ -24,8 +24,8 @@ constraint on the major version. Both packages share the repository's tags.
 ```yaml
 dependencies:
   apm:
-    - dogmatiq/agent-config#^1 # in a project that uses Dogma
-    - dogmatiq/agent-config/internal#^1 # in a Dogmatiq repository
+    - dogmatiq/agent-config#^1.0.0 # in a project that uses Dogma
+    - dogmatiq/agent-config/internal#^1.0.0 # in a Dogmatiq repository
 ```
 
 Which agents receive the skills is up to each developer, so the repository's
@@ -40,7 +40,7 @@ apm install
 Without a configured target, APM falls back to detecting agent-specific files
 such as `CLAUDE.md`, and fails with "No harness detected" if there are none.
 
-The first `apm install` resolves `^1` to the newest 1.x release. Run
+The first `apm install` resolves `^1.0.0` to the newest 1.x release. Run
 `apm update` to move to a newer one later.
 
 Add `apm_modules/` and `apm.lock.yaml` to the repository's `.gitignore`. Don't
@@ -60,7 +60,7 @@ name. Add `path: internal` to select from the `internal` package:
 dependencies:
   apm:
     - git: dogmatiq/agent-config
-      ref: ^1
+      ref: ^1.0.0
       skills: [<name>, <name>]
 ```
 
