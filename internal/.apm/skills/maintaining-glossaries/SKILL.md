@@ -13,8 +13,8 @@ argument-hint:
 
 Guides adding, updating, and reviewing glossary entries in Dogmatiq projects.
 Each project keeps a `docs/glossary.md` that defines terms specific to that
-project. Terms already defined in the [Dogma glossary] are not redefined — they are
-cross-referenced only.
+project. Terms already defined in the [Dogma glossary] are not redefined — they
+are cross-referenced only.
 
 ## When to Use
 
@@ -50,8 +50,8 @@ The file has three structural parts:
 ### 1. Check the upstream glossary
 
 Before writing a definition, confirm the term is not already defined in the
-[Dogma glossary]. If it is, do not redefine it. If project prose needs to reference
-it, link directly to the upstream glossary entry.
+[Dogma glossary]. If it is, do not redefine it. If project prose needs to
+reference it, link directly to the upstream glossary entry.
 
 ### 2. Identify the source
 
@@ -74,7 +74,8 @@ Follow these rules:
   when genuinely necessary.
 - **Define the term itself, not how it is used.** The first sentence should
   complete "X is ..." or "An X is ...".
-- **Follow the [style guide]** for line wrapping, character, and reference link conventions.
+- **Follow the [style guide]** for line wrapping, character, and reference link
+  conventions.
 - **Cross-reference related terms** inline in the definition prose where it
   reads naturally. If a related term is not mentioned in the prose, add a
   trailing `See [term].` line. Do not use `See also`.
