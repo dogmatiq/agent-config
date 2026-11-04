@@ -16,8 +16,6 @@ This repository holds two [APM] packages of skills for coding agents:
 
 Each package only deploys its own skills.
 
-There is no release yet. Skills are added one at a time as they are reviewed.
-
 ## Usage
 
 Add the packages that apply to the project to its `apm.yml` file, pinned to a
