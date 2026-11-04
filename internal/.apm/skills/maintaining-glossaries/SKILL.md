@@ -1,5 +1,5 @@
 ---
-name: glossary
+name: maintaining-glossaries
 description:
   "Add, update, or review glossary terms in a Dogmatiq project. Use when an ADR
   introduces new terms, a term definition needs revision, a new term needs to be
@@ -9,7 +9,7 @@ argument-hint:
   "the term(s) to add or update, e.g., 'optimistic conflict resolution'"
 ---
 
-# Maintain Glossary
+# Maintaining Glossaries
 
 Guides adding, updating, and reviewing glossary entries in Dogmatiq projects.
 Each project keeps a `docs/glossary.md` that defines terms specific to that
