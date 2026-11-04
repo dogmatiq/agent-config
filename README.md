@@ -16,16 +16,22 @@ Add the package to the `apm.yml` file of a Dogmatiq repository, pinned to a
 release tag:
 
 ```yaml
-targets:
-  - claude
 dependencies:
   apm:
     - dogmatiq/agent-config#v0.1.0
 ```
 
-Then run `apm install` to deploy the skills for each agent listed under
-`targets`. APM fails with "No harness detected" if the project has no
-`targets` list and no agent-specific files such as `CLAUDE.md`.
+Which agents receive the skills is up to each developer, so the repository's
+`apm.yml` does not declare `targets`. Set the target once per machine, then run
+`apm install` in each repository:
+
+```sh
+apm config set target claude
+apm install
+```
+
+Without a configured target, APM falls back to detecting agent-specific files
+such as `CLAUDE.md`, and fails with "No harness detected" if there are none.
 
 Projects outside the Dogmatiq organization can install a subset of the skills
 by listing them by name:
