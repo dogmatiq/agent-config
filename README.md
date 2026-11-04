@@ -6,20 +6,27 @@ AI agent skills and configuration for Dogmatiq projects, packaged for [APM].
 
 </div>
 
-This repository is an [APM] package. It holds the skills that coding agents use
-when working on Dogmatiq projects.
+This repository holds two [APM] packages of skills for coding agents:
+
+- `dogmatiq/agent-config`, at the repository root, is for repositories in the
+  Dogmatiq organization.
+- `dogmatiq/agent-config/dogma`, in the `dogma` directory, is for any project
+  that uses [Dogma].
+
+Each package only deploys its own skills.
 
 There is no release yet. Skills are added one at a time as they are reviewed.
 
 ## Usage
 
-Add the package to the `apm.yml` file of a Dogmatiq repository, pinned to a
-release tag:
+Add the packages that apply to the project to its `apm.yml` file, pinned to a
+release tag. Both packages share the repository's tags.
 
 ```yaml
 dependencies:
   apm:
-    - dogmatiq/agent-config#v0.1.0
+    - dogmatiq/agent-config#v0.1.0 # in a Dogmatiq repository
+    - dogmatiq/agent-config/dogma#v0.1.0 # in a project that uses Dogma
 ```
 
 Which agents receive the skills is up to each developer, so the repository's
@@ -44,8 +51,8 @@ Don't commit deployed skills. A repository that provides its own skills keeps
 them under `.apm/`, as described in [Layout](#layout), and `apm install`
 deploys them alongside its dependencies.
 
-Projects outside the Dogmatiq organization can install a subset of the skills
-by listing them by name:
+Projects can also install a subset of a package's skills by listing them by
+name. Use `path: dogma` to select from the `dogma` package:
 
 ```yaml
 dependencies:
@@ -60,10 +67,13 @@ operation through `make`.
 
 ## Layout
 
-Each skill lives in `.apm/skills/<name>/SKILL.md`. Other kinds of agent
-configuration, such as instructions or prompts, belong in sibling directories
-under `.apm/`.
+Each skill for Dogmatiq repositories lives in `.apm/skills/<name>/SKILL.md`,
+and each skill for projects that use Dogma lives in
+`dogma/.apm/skills/<name>/SKILL.md`. Other kinds of agent configuration, such
+as instructions or prompts, belong in sibling directories under the same
+`.apm/` directory.
 
 <!-- references -->
 
 [apm]: https://github.com/microsoft/apm
+[dogma]: https://github.com/dogmatiq/dogma
