@@ -34,6 +34,10 @@ Use the version the user gave, if any. Otherwise find the latest tag with
 | An `### Added` section  | minor      | minor        |
 | Anything else           | patch      | patch        |
 
+A **[BC]** entry is tagged as described in the [maintaining-changelogs skill].
+If `[Unreleased]` describes a breaking change without the tag, treat it as a
+**[BC]** entry and tell the user the tag is missing.
+
 Tell the user the version and why. Ask before releasing a new major version,
 including 1.0.0.
 
@@ -119,4 +123,5 @@ git push origin HEAD v1.6.0
 
 <!-- references -->
 
+[maintaining-changelogs skill]: ../maintaining-changelogs/SKILL.md
 [makefiles.dev]: https://makefiles.dev
