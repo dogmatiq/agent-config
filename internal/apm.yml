@@ -1,5 +1,5 @@
 name: agent-config-internal
-version: 1.1.0
+version: 1.1.1
 description: AI agent skills for repositories in the Dogmatiq organization
 license: MIT
 repository: https://github.com/dogmatiq/agent-config
