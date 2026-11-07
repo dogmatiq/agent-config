@@ -93,6 +93,17 @@ if diff := cmp.Diff(want, got); diff != "" {
 Do not use `cmp` for simple scalar comparisons; use a plain `if want != got`
 with `t.Fatalf` instead.
 
+### Never assert on log records
+
+Don't write tests that capture or assert on log records, such as with a
+recording `slog` handler. Logging isn't tested.
+
+Log records describe what the code does, but they aren't part of its behavior.
+Tests cover the behavior itself. A test that asserts on records ties itself to
+levels, log messages and attributes, which then can't change without breaking
+tests that say nothing about whether the code works. Logging is checked in
+review instead.
+
 ## Test Structure and Naming
 
 ### Package names
