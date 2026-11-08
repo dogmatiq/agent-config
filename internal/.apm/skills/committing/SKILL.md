@@ -9,16 +9,18 @@ argument-hint: "optional description of the change being committed"
 
 # Committing
 
-A commit should contain one change, with its changelog entry, formatted by the
-project's tooling, and nothing else.
+A commit should contain one change, formatted by the project's tooling, and
+nothing else.
 
 ## Before committing
 
 Do these in order:
 
-1. If users of the project would notice the change, add an entry to the
-   `[Unreleased]` section of `CHANGELOG.md` in the same commit, as described in
-   the [maintaining-changelogs skill]. Refactoring, tests and CI don't need one.
+1. Decide whether the change needs a changelog entry. Most commits don't:
+   refactoring, tests and CI are invisible to users. If users of the project
+   would notice the change, add an entry to the `[Unreleased]` section of
+   `CHANGELOG.md` in the same commit, as described in the
+   [maintaining-changelogs skill].
 2. Run `make precommit`, as described in the [building skill]. It can rewrite
    files, for example by formatting them, and that includes the changelog, so
    run it after editing it.
