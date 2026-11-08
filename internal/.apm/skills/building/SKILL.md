@@ -1,9 +1,9 @@
 ---
 name: building
 description:
-  "Use when building, testing, linting, or formatting a Dogmatiq project,
-  preparing changes to commit, or checking whether CI will pass. Triggers: run
-  tests, build, lint, format, precommit, ready to commit, make."
+  "Use when building, testing, linting, or formatting a Dogmatiq project, or
+  checking whether CI will pass. Triggers: run tests, build, lint, format,
+  precommit, make."
 argument-hint: "optional target, e.g. 'test' or 'precommit'"
 ---
 
@@ -31,13 +31,8 @@ make test GO_TEST_ARGS='-run TestParseID/empty_input'
 This replaces the project's default test flags, such as `-race`. That's fine for
 a focused run, so don't add them back.
 
-Run `make precommit` before every commit. It can rewrite files, for example by
-formatting them. Include its changes to the files you changed.
-
-If it changes any other files, such as by regenerating generated code, don't
-revert them and don't commit them. Tell the user which files changed. Only the
-user can tell whether the changes are noise or a real problem, such as a tool
-version that differs from the one that generated the committed files.
+Run `make precommit` before every commit, as described in the [committing
+skill].
 
 To list every target the project has, with a description of each:
 
@@ -50,4 +45,5 @@ files in it. Run `make makefiles` to update it.
 
 <!-- references -->
 
+[committing skill]: ../committing/SKILL.md
 [makefiles.dev]: https://makefiles.dev
