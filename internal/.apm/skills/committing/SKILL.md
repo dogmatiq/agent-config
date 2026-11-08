@@ -44,10 +44,10 @@ started.
 
 ## Writing the message
 
-Write the first line as a sentence in the imperative mood that ends with a
-period, such as "Say never to assert on log records in tests." Describe what the
-commit does, not how you did it. If the reason for the change isn't obvious, add
-it in the body after a blank line.
+Write the first line as a sentence that says what merging the commit would do to
+the codebase. Use the imperative mood and end with a period, such as "Return an
+error from `ParseID` when the input is empty." If the reason for the change
+isn't obvious, add it in the body after a blank line.
 
 ## Common Mistakes
 
