@@ -22,21 +22,25 @@ Do these in order:
    `CHANGELOG.md` in the same commit, as described in the
    [maintaining-changelogs skill].
 2. Run `make precommit`, as described in the [building skill]. It can rewrite
-   files, for example by formatting them, and that includes the changelog, so
-   run it after editing it.
+   files, such as by formatting or regenerating them, and that includes the
+   changelog, so run it after editing it.
 
 ## Choosing what to commit
 
-Commit the files you changed, together with any changes `make precommit` made to
-them.
+Commit every file that belongs to the change, including files the makefiles
+generate or format because of it. For example, a change to a `.proto` file
+regenerates the code built from it, and that code goes in the same commit. The
+makefiles also do this before `make test`, so these files may already have
+changed by the time you run `make precommit`.
 
-If `make precommit` changes other files, such as by regenerating generated code,
-don't revert them and don't commit them. Tell the user which files changed. Only
-the user can tell whether the changes are noise or a real problem, such as a
-tool version that differs from the one that generated the committed files.
+If files have changed that your change can't explain, such as generated code
+whose source you didn't touch, don't commit them and don't revert them. Tell the
+user which files changed. Only the user can tell whether the changes are noise
+or a real problem, such as a tool version that differs from the one that
+generated the committed files.
 
-Do the same for any other changes that were already in the working tree before
-you started.
+Leave alone any other changes that were already in the working tree before you
+started.
 
 ## Writing the message
 
@@ -49,7 +53,8 @@ it in the body after a blank line.
 
 - Committing a change that users would notice without a changelog entry.
 - Editing the changelog after running `make precommit`.
-- Committing files that `make precommit` changed but you didn't.
+- Leaving out generated files whose source the commit changes.
+- Committing changes to generated files that your change can't explain.
 - Reverting unrelated changes to "clean up" the working tree.
 
 <!-- references -->
