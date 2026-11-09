@@ -10,6 +10,14 @@ The format is based on [Keep a Changelog], and this project adheres to
 [keep a changelog]: https://keepachangelog.com/en/1.0.0/
 [semantic versioning]: https://semver.org/spec/v2.0.0.html
 
+## [Unreleased]
+
+### Added
+
+- Added the `gitignore` skill to `dogmatiq/agent-config/internal`. It says that
+  a repository's `.gitignore` only ignores what the repository itself produces,
+  and helps developers set up a global ignore file for everything else.
+
 ## [1.2.0] - 2026-11-09
 
 ### Added
