@@ -54,8 +54,17 @@ a short paragraph before the first heading can introduce them.
 
 ## Writing an entry
 
-- Write a bullet in the past tense that starts with a verb, such as "Added",
-  "Removed" or "Fixed".
+- Start an entry under `### Added`, `### Deprecated`, `### Removed` or
+  `### Security` with a verb in the past tense, such as "Added" or "Removed".
+  A **[BC]** tag, if there is one, comes before the verb.
+- Start an entry under `### Changed` with a verb in the past tense when the
+  change is an action on the API or the configuration, such as "Renamed
+  `Input` to `VariableSet`". Otherwise, state the new behavior, such as
+  "`Run()` now returns an error…".
+- Start an entry under `### Fixed` with the problem as a user saw it, in the
+  past tense, then say what's true now, in the present tense. Don't start with
+  "Fixed", which turns the problem into a gerund clause that's hard to read,
+  such as "Fixed commands being queued when…".
 - Describe the change from the user's point of view, and name the API in
   backticks.
 - For a deprecation, name the replacement.
@@ -70,10 +79,22 @@ a short paragraph before the first heading can introduce them.
 - Added `Config.RenderStructFieldName`, a function that controls the name
   displayed for each struct field.
 
+### Changed
+
+- `Engine.Run()` now returns an error, instead of panicking, when the engine
+  can't start.
+
 ### Deprecated
 
 - Deprecated the `GoX()` functions in favor of the equivalent `WaitGroup.GoX()`
   methods.
+
+### Fixed
+
+- If a process root's `MarshalBinary()` method failed after handling a
+  deadline, the commands that the process executed were queued without its
+  other effects, and duplicated on each retry. Now they're queued only if the
+  other effects are saved too.
 ```
 
 ## Marking breaking changes
@@ -109,7 +130,11 @@ Entries with this tag decide the next version number, as described in the
 ## Common Mistakes
 
 - Adding an entry under a released version instead of `[Unreleased]`.
-- Writing an entry in the present tense, such as "Adds" or "Removes".
+- Starting an entry with a present-tense verb, such as "Adds" or "Removes".
+- Starting an entry under `### Fixed` with "Fixed", or describing only the new
+  behavior without the problem.
+- Starting an entry under `### Changed` with "Changed" when stating the new
+  behavior would read more plainly.
 - Leaving a heading with no entries under it.
 - Tagging an entry **[BC]** without defining `[bc]` in the changelog.
 - Tagging the removal of an unsupported Go version as **[BC]**.

@@ -18,6 +18,12 @@ The format is based on [Keep a Changelog], and this project adheres to
   a repository's `.gitignore` only ignores what the repository itself produces,
   and helps developers set up a global ignore file for everything else.
 
+### Changed
+
+- The `maintaining-changelogs` skill no longer requires every entry to start
+  with a verb. An entry under `### Changed` may state the new behavior, and an
+  entry under `### Fixed` starts with the problem, then says what's true now.
+
 ## [1.2.0] - 2026-11-09
 
 ### Added
