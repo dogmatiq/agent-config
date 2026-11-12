@@ -56,9 +56,11 @@ a short paragraph before the first heading can introduce them.
 
 - Start an entry under `### Added`, `### Deprecated`, `### Removed` or
   `### Security` with a verb in the past tense, such as "Added" or "Removed".
+  A **[BC]** tag, if there is one, comes before the verb.
 - Start an entry under `### Changed` with a verb in the past tense when the
-  change is an action on the API, such as "Renamed `Input` to `VariableSet`".
-  Otherwise, state the new behavior, such as "`Run()` now returns an error…".
+  change is an action on the API or the configuration, such as "Renamed
+  `Input` to `VariableSet`". Otherwise, state the new behavior, such as
+  "`Run()` now returns an error…".
 - Start an entry under `### Fixed` with the problem as a user saw it, in the
   past tense, then say what's true now, in the present tense. Don't start with
   "Fixed", which turns the problem into a gerund clause that's hard to read,
