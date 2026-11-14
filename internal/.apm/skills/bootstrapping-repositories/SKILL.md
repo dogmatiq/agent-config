@@ -2,9 +2,9 @@
 name: bootstrapping-repositories
 description:
   "Use when setting up a new repository in the Dogmatiq organization, or one
-  that lacks the standard files: Makefile, .gitignore, apm.yml, mise.toml,
-  CHANGELOG.md and README.md. Triggers: new repo, set up repo, bootstrap repo,
-  repo basics, standard files."
+  that lacks the standard files: Makefile, .gitignore, apm.yml, mise.toml and
+  README.md. Triggers: new repo, set up repo, bootstrap repo, repo basics,
+  standard files."
 argument-hint: "optional repository name, e.g. 'observatory'"
 ---
 
@@ -100,27 +100,6 @@ dependencies:
 apm = "0"
 ```
 
-## CHANGELOG.md
-
-Leave `[Unreleased]` empty. The [maintaining-changelogs skill] adds entries
-with the changes that need them.
-
-```markdown
-# Changelog
-
-All notable changes to this project will be documented in this file.
-
-The format is based on [Keep a Changelog], and this project adheres to
-[Semantic Versioning].
-
-<!-- references -->
-
-[keep a changelog]: https://keepachangelog.com/en/1.0.0/
-[semantic versioning]: https://semver.org/spec/v2.0.0.html
-
-## [Unreleased]
-```
-
 ## README.md
 
 Follow the [writing-prose skill]. The title is the repository's name in title
@@ -159,7 +138,8 @@ If the repository has no release tags, add this below the badges:
 ## Check
 
 Run `make`. It installs the shared makefiles and the agent skills, which shows
-that the Makefile and `apm.yml` work. Then run `git status` and check that the
+that the Makefile and `apm.yml` work, and it creates `CHANGELOG.md` if the
+repository doesn't have one. Don't write that file yourself. Then run `git status` and check that the
 only new or changed files are the ones described here, plus any changes that
 were already in progress.
 
@@ -170,6 +150,5 @@ and which generated files are missing.
 
 [dogmatiq/repos]: https://github.com/dogmatiq/repos
 [gitignore skill]: ../gitignore/SKILL.md
-[maintaining-changelogs skill]: ../maintaining-changelogs/SKILL.md
 [makefiles.dev]: https://makefiles.dev
 [writing-prose skill]: ../writing-prose/SKILL.md
