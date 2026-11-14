@@ -34,20 +34,18 @@ from the template, so the user can decide.
 
 ## Files that Terraform generates
 
-[dogmatiq/repos] generates these files in each repository. Most start with a
-"DO NOT EDIT!" header. Never write them by hand.
+[dogmatiq/repos] generates some files in each repository, such as the
+`.github/` directory's configuration and workflows, and which ones depends on
+the repository's entry there. Each starts with a "DO NOT EDIT!" header, except
+`LICENSE`, which is generated from a template but is only license text. Never
+write or edit a file with that header, or `LICENSE`, by hand.
 
-- `LICENSE`
-- `codecov.yml`, for Go repositories only
-- `.github/dependabot.yml`
-- `.github/workflows/ci.yml`
-- `.github/workflows/dependabot.yml`, for repositories with auto-merge enabled
-- `.github/workflows/publish-release.yml`
-
-Terraform commits these files to the repository's default branch, so run
-`git pull` before concluding that one is missing. If the repository still lacks
-files that it should have, it is probably not registered in dogmatiq/repos.
-Tell the user, and carry on with the rest.
+Terraform commits these files to the repository's default branch, and may do so
+some time after the repository is created, or after a setting that controls a
+file changes. Run `git pull` before concluding that one is missing. If
+`LICENSE` or the `.github/` directory is still missing, the repository is
+probably not registered in dogmatiq/repos. Tell the user, and carry on with the
+rest.
 
 ## Makefile
 
