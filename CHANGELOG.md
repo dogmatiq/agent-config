@@ -14,6 +14,11 @@ The format is based on [Keep a Changelog], and this project adheres to
 
 ### Added
 
+- Added the `bootstrapping-repositories` skill to
+  `dogmatiq/agent-config/internal`. It writes the files that every Dogmatiq
+  repository has — the Makefile, `.gitignore`, `apm.yml`, `mise.toml` and
+  `README.md` — using details that it looks up, and leaves the files that
+  Terraform and the makefiles generate alone.
 - Added the `gitignore` skill to `dogmatiq/agent-config/internal`. It says that
   a repository's `.gitignore` only ignores what the repository itself produces,
   and helps developers set up a global ignore file for everything else.
